@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>Login</title>
+  <!-- Simple bar CSS -->
+  <link rel="stylesheet" href="css/simplebar.css">
+  <!-- Fonts CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Icons CSS -->
+  <link rel="stylesheet" href="css/feather.css">
+  <!-- Date Range Picker CSS -->
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="css/app-light.css" id="lightTheme" disabled>
+  <link rel="stylesheet" href="css/app-dark.css" id="darkTheme">
+</head>
+
+<body class="dark ">
+  <div id="preloader">
+    <div id="loader">
+    </div>
+  </div>
+  <div class="wrapper vh-100" style="padding-top:5em;">
+    <div class="align-items-center h-100">
+      <form class="col-lg-3 col-md-4 col-10 mx-auto" onsubmit="event.preventDefault()">
+        <div class="mx-auto text-center my-4">
+          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="./index.html">
+            <img src="./assets/logo.svg" class="img-fluid pb-3" id="logo" style="height: 25%; width: 25%;" />
+          </a>
+          <h1 class="h2 mb-3">Sign in</h1>
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" class="form-control form-control-lg" placeholder="Email address" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control form-control-lg" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+          <label for="inputUser">Select User Type</label>
+          <select class="form-control select2 form-control-lg" id="inputUser" required>
+            <option value="">Select User</option>
+            <option value="Doc">Doctor</option>
+            <option value="Pat">Patient</option>
+          </select>
+        </div>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Stay logged in </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()" id="lgn">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></span>
+          Let me in</button>
+        <br />
+        <div class="alert alert-danger text-center" role="alert" id="errorAlert"></div>
+      </form>
+    </div>
+  </div>
+  <script src="js/lib/jquery.min.js"></script>
+  <script src="js/lib/popper.min.js"></script>
+  <script src="js/lib/moment.min.js"></script>
+  <script src="js/lib/bootstrap.min.js"></script>
+  <script src="js/lib/simplebar.min.js"></script>
+  <script src='js/lib/daterangepicker.js'></script>
+  <script src='js/lib/jquery.stickOnScroll.js'></script>
+  <script src="js/lib/tinycolor-min.js"></script>
+  <script src="js/lib/config.js"></script>
+  <script src="js/lib/apps.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/loader.js"></script>
+</body>
+
+</html>

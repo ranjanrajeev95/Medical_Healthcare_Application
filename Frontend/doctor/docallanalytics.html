@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>Analytics Dashboard</title>
+  <!-- Simple bar CSS -->
+  <link rel="stylesheet" href="../css/simplebar.css">
+  <!-- Fonts CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Icons CSS -->
+  <link rel="stylesheet" href="../css/feather.css">
+  <link rel="stylesheet" href="../css/select2.css">
+  <link rel="stylesheet" href="../css/dropzone.css">
+  <link rel="stylesheet" href="../css/uppy.min.css">
+  <link rel="stylesheet" href="../css/jquery.steps.css">
+  <link rel="stylesheet" href="../css/jquery.timepicker.css">
+  <link rel="stylesheet" href="../css/quill.snow.css">
+  <!-- Date Range Picker CSS -->
+  <link rel="stylesheet" href="../css/daterangepicker.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="../css/app-light.css" id="lightTheme" disabled>
+  <link rel="stylesheet" href="../css/app-dark.css" id="darkTheme">
+</head>
+
+<body class="vertical  dark ">
+  <!--===== Preloader Section===== -->
+  <div id="preloader">
+    <div id="loader">
+    </div>
+  </div>
+  <div class="wrapper">
+    <!--########## -->
+    <!-- Navbar-->
+    <!--########## -->
+    <nav class="topnav navbar navbar-light">
+      <button type="button" class="navbar-toggler text-muted mt-2 p-0 mr-3 collapseSidebar">
+        <i class="fe fe-menu navbar-toggler-icon"></i>
+      </button>
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link text-muted my-2" href="#" id="modeSwitcher" data-mode="dark">
+            <i class="fe fe-sun fe-16"></i>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-muted my-2" href="./#" data-toggle="modal" data-target=".modal-shortcut">
+            <span class="fe fe-grid fe-16"></span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <aside class="sidebar-left border-right bg-white shadow" id="leftSidebar" data-simplebar>
+      <a href="#" class="btn collapseSidebar toggle-btn d-lg-none text-muted ml-2 mt-3" data-toggle="toggle">
+        <i class="fe fe-x"><span class="sr-only"></span></i>
+      </a>
+      <nav class="vertnav navbar navbar-light">
+        <!-- nav bar -->
+        <div class="w-100 mb-4 d-flex">
+          <a class="navbar-brand mx-auto mt-2 flex-fill text-center" href="../index.html">
+            <img src="../assets/logo.svg" class="img-fluid " id="logo" style="height: 80%; width: 50%;" />
+          </a>
+        </div>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#dashboard" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-activity fe-16"></i>
+              <span class="ml-3 item-text">Analytics</span><span class="sr-only">(current)</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="dashboard">
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./docDash.html"><span class="ml-1 item-text">My
+                    Analytics</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./docPatViewDash.html"><span class="ml-1 item-text">User
+                    Analytics</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link pl-3" href="./docallanalytics.html"><span class="ml-1 item-text">Group
+                    Analytics</span></a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+          <span>Personal</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#profile" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-user fe-16"></i>
+              <span class="ml-3 item-text">Profile</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="profile">
+              <a class="nav-link pl-3" href="./docProfile.html"><span class="ml-1">My Profile</span></a>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#fileman" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-folder fe-16"></i>
+              <span class="ml-3 item-text">File Manager</span>
+            </a>
+            <ul class="collapse list-unstyled pl-3 w-100" id="fileman">
+              <a class="nav-link pl-3" href="./docFileBlood.html"><span class="ml-1">Upload Blood Count
+                  Reports</span></a>
+              <a class="nav-link pl-3" href="./docFileSugar.html"><span class="ml-1">Upload Blood Sugar
+                  Reports</span></a>
+            </ul>
+          </li>
+        </ul>
+        <p class="text-muted nav-heading mt-4 mb-1">
+          <span>Security</span>
+        </p>
+        <ul class="navbar-nav flex-fill w-100 mb-2">
+          <li class="nav-item dropdown">
+            <a href="#auth" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle nav-link">
+              <i class="fe fe-shield fe-16"></i>
+              <span class="ml-3 item-text">Authentication</span>
+            </a>
+            <ul class="collapse list-unstyled pl-4 w-100" id="auth">
+              <a class="nav-link pl-3" href="./resetDocPaswd.html"><span class="ml-1">Reset Password</span></a>
+            </ul>
+          </li>
+        </ul>
+        <div class="btn-box w-100 mt-4 mb-1">
+          <a class="btn mb-2 btn-primary btn-lg btn-block" onclick="logout()">
+            <i class="fe fe-log-out fe-12 mx-2"></i><span class="small">Log Out</span>
+          </a>
+        </div>
+      </nav>
+    </aside>
+
+
+    <!--########## -->
+    <!-- Main Body -->
+    <!--########## -->
+    <main role="main" class="main-content" id="gpAlyts">
+      <div class="container-fluid">
+        <h1 class="h1 text-center">Data Analytics</h1>
+        <div class="row justify-content-center">
+          <div class="col-12">
+
+            <!-- Bar charts-->
+            <div class="row align-items-center my-2">
+              <div class="col-auto ml-auto">
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-md-12">
+                <div class="chart-box">
+                  <h3 class="h3 text-center">Average Blood Sugar Levels of Patients</h3>
+                  <div class="col pr-0  text-center">
+                    <p class="small text-muted mb-0">Blood Sugar(F) -> 60-100 mgs/dl</p>
+                    <p class="small text-muted mb-0">Blood Sugar(PP) -> 100-150 mgs/dl</p>
+                  </div>
+                  <div id="columnChartpat"></div>
+                </div>
+              </div> <!-- .col -->
+            </div> <!-- end section -->
+
+            <br />
+            <!-- Line charts-->
+            <div class="my-4">
+              <h3 class="h3 text-center">Average Blood Count Levels of Patients</h3>
+              <div class="col pr-0  text-center">
+                <p class="small text-muted mb-0"> Haemoglobin -> 12–17 g/dl</p>
+                <p class="small text-muted mb-0"> Platelet Count-> 1.5-4.0 lakhs/mcL</p>
+                <p class="small text-muted mb-0"> RBC Count -> 4.5–6.0 millions/mm3</p>
+              </div>
+              <div id="lineChartpat"></div>
+            </div>
+
+            <br />
+            <!-- Bar charts-->
+            <div class="my-4">
+              <h3 class="h3 text-center">Average Tests Done by the Patients</h3>
+              <div id="barChartpat"></div>
+            </div>
+
+
+            <!-- info small box -->
+          </div>
+        </div> <!-- .row -->
+
+        <div class="row justify-content-center">
+          <div class="col-12">
+
+
+            <!-- Bar charts-->
+            <div class="row align-items-center my-2">
+              <div class="col-auto ml-auto">
+
+              </div>
+            </div>
+            <div class="row my-4">
+              <div class="col-md-12">
+                <div class="chart-box">
+                  <h3 class="h3 text-center">Average Blood Sugar Levels of Doctors</h3>
+                  <div class="col pr-0  text-center">
+                    <p class="small text-muted mb-0">Blood Sugar(F) -> 60-100 mgs/dl</p>
+                    <p class="small text-muted mb-0">Blood Sugar(PP) -> 100-150 mgs/dl</p>
+                  </div>
+                  <div id="columnChartdoc"></div>
+                </div>
+              </div> <!-- .col -->
+            </div> <!-- end section -->
+
+            <br />
+            <!-- Line charts-->
+            <div class="my-4">
+              <h3 class="h3 text-center">Average Blood Count Levels of Doctors</h3>
+              <div class="col pr-0  text-center">
+                <p class="small text-muted mb-0"> Haemoglobin -> 12–17 g/dl</p>
+                <p class="small text-muted mb-0"> Platelet Count-> 1.5-4.0 lakhs/mcL</p>
+                <p class="small text-muted mb-0"> RBC Count -> 4.5–6.0 millions/mm3</p>
+              </div>
+              <div id="lineChartdoc"></div>
+            </div>
+
+            <br />
+            <!-- Bar charts-->
+            <div class="my-4">
+              <h3 class="h3 text-center">Average Tests Done by the Doctors</h3>
+              <div id="barChartdoc"></div>
+
+
+              <!-- info small box -->
+
+            </div>
+          </div> <!-- .row -->
+        </div> <!-- .container-fluid -->
+
+        <!--########## -->
+        <!-- Modal Body -->
+        <!--########## -->
+        <div class="modal fade modal-shortcut modal-slide" tabindex="-1" role="dialog"
+          aria-labelledby="defaultModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="defaultModalLabel">View Dashboard</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body px-5">
+                <div class="row align-items-center">
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-users fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Users</p>
+                  </div>
+                  <div class="col-6 text-center">
+                    <div class="squircle bg-primary justify-content-center">
+                      <i class="fe fe-activity fe-32 align-self-center text-white"></i>
+                    </div>
+                    <p>Activity</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </main> <!-- main -->
+  </div> <!-- .wrapper -->
+  <script src="../js/lib/jquery.min.js"></script>
+  <script src="../js/lib/popper.min.js"></script>
+  <script src="../js/lib/moment.min.js"></script>
+  <script src="../js/lib/bootstrap.min.js"></script>
+  <script src="../js/lib/simplebar.min.js"></script>
+  <script src='../js/lib/daterangepicker.js'></script>
+  <script src='../js/lib/jquery.stickOnScroll.js'></script>
+  <script src="../js/lib/tinycolor-min.js"></script>
+  <script src="../js/lib/config.js"></script>
+  <script src="../js/lib/d3.min.js"></script>
+  <script src="../js/lib/topojson.min.js"></script>
+  <script src="../js/lib/datamaps.all.min.js"></script>
+  <script src="../js/lib/datamaps-zoomto.js"></script>
+  <script src="../js/lib/datamaps.custom.js"></script>
+  <script src="../js/lib/Chart.min.js"></script>
+  <script>
+    /* defind global options */
+    Chart.defaults.global.defaultFontFamily = base.defaultFontFamily;
+    Chart.defaults.global.defaultFontColor = colors.mutedColor;
+  </script>
+  <script src="../js/lib/gauge.min.js"></script>
+  <script src="../js/lib/jquery.sparkline.min.js"></script>
+  <script src="../js/lib/apexcharts.min.js"></script>
+  <script src='../js/lib/jquery.mask.min.js'></script>
+  <script src='../js/lib/select2.min.js'></script>
+  <script src='../js/lib/jquery.steps.min.js'></script>
+  <script src='../js/lib/jquery.validate.min.js'></script>
+  <script src='../js/lib/jquery.timepicker.js'></script>
+  <script src='../js/lib/dropzone.min.js'></script>
+  <script src='../js/lib/uppy.min.js'></script>
+  <script src='../js/lib/quill.min.js'></script>
+  <script src="../js/lib/apps.js"></script>
+  <script src="./js/docallanalytics.js"></script>
+  <script src="../js/loader.js"></script>
+</body>
+
+</html>
